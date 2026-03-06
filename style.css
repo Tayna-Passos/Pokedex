@@ -667,5 +667,25 @@ body {
     .detail-group p, .stats-group .stat-item span, .abilities-group li {
         font-size: 0.8em;
     }
+}
+@media (max-width: 800px) {
+    body {
+        overflow-y: auto; /* Permite rolar a página no celular */
+        align-items: flex-start; /* Alinha ao topo para não cortar o início */
+    }
 
+    .pokedex-container {
+        flex-direction: column;
+        width: 100%; /* Ocupa a largura total disponível */
+        height: auto; /* Deixa a altura crescer conforme o conteúdo */
+        max-width: 450px; /* Limita para não ficar largo demais em tablets */
+        border: none; /* Remove bordas grossas que roubam espaço na tela pequena */
+        box-shadow: none;
+    }
+
+    .pokedex-panel {
+        min-height: 90vh; /* Cada painel quase ocupa a tela inteira */
+        border-radius: 20px !important; /* Arredonda todos os cantos no mobile */
+        margin-bottom: 20px;
+    }
 }
