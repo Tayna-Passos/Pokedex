@@ -1,11 +1,11 @@
 # 📱 Pokédex Interativa
 
-![Pokemon Header]:(https://tayna-passos.github.io/Pokedex/)
+![Pokemon Header](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png)
 
 Uma aplicação web leve e dinâmica que permite navegar pelo universo Pokémon. O projeto consome dados da [PokeAPI](https://pokeapi.co/) e foi planeado para oferecer uma experiência fluida em qualquer dispositivo.
 
 ## 🔗 Link do Projeto
-Acesse aqui:(https://tayna-passos.github.io/Pokedex/)
+Aceda aqui: [https://tayna-passos.github.io/Pokedex/](https://tayna-passos.github.io/Pokedex/)
 
 ---
 
