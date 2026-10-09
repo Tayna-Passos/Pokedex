@@ -1,7 +1,7 @@
 # ⚡ Pokédex Clássica - Kanto Edition
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Charmander" width="300">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" alt="Squirtle" width="300">
 </p>
 
 A **Pokédex Clássica** é uma aplicação web interativa e nostálgica desenvolvida com HTML, CSS e JavaScript puro, inspirada no design icônico da primeira Pokédex vermelha da região de Kanto. O projeto conecta-se diretamente à [PokéAPI](https://pokeapi.co/) para trazer a lista completa dos 151 Pokémon originais, unindo uma interface retrô fiel aos jogos clássicos com funcionalidades modernas de navegação e busca em tempo real.
