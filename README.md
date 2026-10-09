@@ -1,10 +1,10 @@
 # ⚡ Pokédex Clássica - Kanto Edition
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" width="300">
+ <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png" alt="Gengar" width="300">
 </p>
 
-A **Pokédex Clássica** é uma aplicação web interativa e nostálgica desenvolvida com HTML, CSS e JavaScript puro[cite: 5], inspirada no design icônico da primeira Pokédex vermelha da região de Kanto. O projeto conecta-se diretamente à [PokéAPI](https://pokeapi.co/) para trazer a lista completa dos 151 Pokémon originais, unindo uma interface retrô fiel aos jogos clássicos com funcionalidades modernas de navegação e busca em tempo real.
+A **Pokédex Clássica** é uma aplicação web interativa e nostálgica desenvolvida com HTML, CSS e JavaScript puro, inspirada no design icônico da primeira Pokédex vermelha da região de Kanto. O projeto conecta-se diretamente à [PokéAPI](https://pokeapi.co/) para trazer a lista completa dos 151 Pokémon originais, unindo uma interface retrô fiel aos jogos clássicos com funcionalidades modernas de navegação e busca em tempo real.
 
 ---
 
@@ -26,5 +26,5 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 
 * **HTML5:** Estruturação semântica da interface dobrável da Pokédex.
 * **CSS3:** Estilização avançada com fontes retrô (*Press Start 2P*), paleta de cores temática, design flexível e responsivo.
-* **JavaScript (Vanilla ES6+):** Lógica da aplicação, manipulação dinâmica do DOM, requisições assíncronas (`async/await`) e gerenciamento de eventos de clique e teclado.
+* **JavaScript:** Lógica da aplicação, manipulação dinâmica do DOM, requisições assíncronas e gerenciamento de eventos de clique e teclado.
  
