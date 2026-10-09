@@ -52,7 +52,7 @@ function renderCatalogList(pokemonList) {
         listItem.classList.add('catalog-item');
         listItem.dataset.pokemonId = pokemon.id;
         listItem.dataset.pokemonName = pokemon.name;
-        listItem.textContent = `#${pokemon.id.toString().padStart(3, '0')} - ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`;
+        listItem.textContent = `#${pokemon.id.toString().padStart(3, '0')} ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`;
 
         listItem.addEventListener('click', () => {
             currentSelectedIndex = index;
@@ -119,9 +119,9 @@ async function displayPokemonDetails(query) {
             const statItem = document.createElement('div');
             statItem.classList.add('stat-item');
             statItem.innerHTML = `<span>${statName}: ${statValue}</span>
-                                  <div class="stat-bar-container">
-                                      <div class="stat-bar" style="width: ${Math.min(100, (statValue / 255) * 100)}%;"></div>
-                                  </div>`;
+                                 <div class="stat-bar-container">
+                                     <div class="stat-bar" style="width: ${Math.min(100, (statValue / 255) * 100)}%;"></div>
+                                 </div>`;
             statsListContainer.appendChild(statItem);
         });
         detailPokemonStats.appendChild(statsListContainer);
@@ -168,45 +168,60 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPokemonCatalog();
     displayPokemonDetails('');
 
-    // Botão UP
-    document.querySelector('.up').addEventListener('click', () => {
-        const items = document.querySelectorAll('.catalog-item');
+    // Função de mover para cima (compartilhada)
+    const moveUp = () => {
         if (currentSelectedIndex > 0) {
             currentSelectedIndex--;
             highlightCatalogItem(currentSelectedIndex);
         }
-    });
+    };
 
-    // Botão DOWN
-    document.querySelector('.down').addEventListener('click', () => {
+    // Função de mover para baixo (compartilhada)
+    const moveDown = () => {
         const items = document.querySelectorAll('.catalog-item');
         if (currentSelectedIndex < items.length - 1) {
             currentSelectedIndex++;
             highlightCatalogItem(currentSelectedIndex);
         }
+    };
+
+    // Botões UP (e o botão A agora funciona como UP também)
+    document.querySelectorAll('.up, .a-button').forEach(button => {
+        button.addEventListener('click', moveUp);
     });
 
-    // Botão A — mostra apenas habilidades
-    document.querySelector('.a-button').addEventListener('click', () => {
-        const items = document.querySelectorAll('.catalog-item');
-        const selected = items[currentSelectedIndex];
-        if (selected) {
-            displayPokemonDetails(selected.dataset.pokemonName);
-            detailPokemonStats.innerHTML = `<h3 class="group-title">Estatísticas Base</h3>`;
-        }
+    // Botões DOWN (e o botão B agora funciona como DOWN também)
+    document.querySelectorAll('.down, .b-button').forEach(button => {
+        button.addEventListener('click', moveDown);
     });
 
-    // Botão B — mostra apenas estatísticas
-    document.querySelector('.b-button').addEventListener('click', () => {
-        const items = document.querySelectorAll('.catalog-item');
-        const selected = items[currentSelectedIndex];
-        if (selected) {
-            displayPokemonDetails(selected.dataset.pokemonName);
-            detailPokemonAbilities.innerHTML = `<h3 class="group-title">Habilidades</h3>`;
-        }
+    // Botão Verde — Limpa a pesquisa e reseta a lista
+    document.querySelector('.green-button').addEventListener('click', () => {
+        pokemonCatalogSearch.value = '';
+        renderCatalogList(allPokemonData);
+        currentSelectedIndex = 0;
+        highlightCatalogItem(currentSelectedIndex);
+        pokemonCatalogList.scrollTop = 0;
     });
 
-        // Filtro de busca
+    // Botão Azul (painel) — Volta o foco/scroll para o topo da lista
+    document.querySelector('.blue-button').addEventListener('click', () => {
+        currentSelectedIndex = 0;
+        highlightCatalogItem(currentSelectedIndex);
+        pokemonCatalogList.scrollTop = 0;
+    });
+
+    // Opcional: Se quiser dar utilidade ao botão azul da dobradiça (.big-blue)
+    const bigBlueButton = document.querySelector('.big-blue');
+    if (bigBlueButton) {
+        bigBlueButton.addEventListener('click', () => {
+            currentSelectedIndex = 0;
+            highlightCatalogItem(currentSelectedIndex);
+            pokemonCatalogList.scrollTop = 0;
+        });
+    }
+
+    // Filtro de busca
     pokemonCatalogSearch.addEventListener('input', () => {
         const searchTerm = pokemonCatalogSearch.value.toLowerCase();
         const filteredPokemon = allPokemonData.filter(pokemon =>
